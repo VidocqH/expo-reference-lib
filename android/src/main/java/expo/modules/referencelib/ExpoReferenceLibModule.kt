@@ -1,7 +1,7 @@
 package expo.modules.referencelib
 
 import android.content.Intent
-import android.content.Intent.*
+import android.os.Build
 import expo.modules.kotlin.modules.Module
 import expo.modules.kotlin.modules.ModuleDefinition
 
@@ -26,9 +26,11 @@ class ExpoReferenceLibModule : Module() {
   private val context
     get() = requireNotNull(appContext.reactContext)
   private fun openDefinition(value: String) {
-    val intent = Intent(ACTION_DEFINE)
-    intent.putExtra(EXTRA_TEXT, value)
-    intent.addFlags(FLAG_ACTIVITY_NEW_TASK)
-    context.startActivity(intent)
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+      val intent = Intent(Intent.ACTION_DEFINE)
+      intent.putExtra(Intent.EXTRA_TEXT, value)
+      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+      context.startActivity(intent)
+    }
   }
 }
