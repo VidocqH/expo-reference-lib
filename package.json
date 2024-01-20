@@ -28,16 +28,13 @@
   "author": "VidocqH <vidocqho@gmail.com> (https://github.com/VidocqH)",
   "license": "MIT",
   "homepage": "https://github.com/VidocqH/expo-reference-lib#readme",
-  "dependencies": {},
-  "devDependencies": {
-    "@types/react": "^18.0.25",
-    "@types/react-native": "^0.70.6",
-    "expo-module-scripts": "^3.0.4",
-    "expo-modules-core": "^1.1.0"
+  "dependencies": {
+    "expo-module-scripts": "^3.4.0",
+    "expo-modules-core": "^1.11.7"
   },
   "peerDependencies": {
-    "expo": "*",
-    "react": "*",
-    "react-native": "*"
+    "expo": "^49.0.0",
+    "react": "18.2.0",
+    "react-native": "0.72.5"
   }
 }
